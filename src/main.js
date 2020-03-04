@@ -6,9 +6,11 @@ import '@/assets/css/tailwind.css'
 Vue.config.productionTip = false
 
 
-  import axios from 'axios'; 
-  Vue.use(axios)
+import axios from 'axios';
+import router from './router'
+Vue.use(axios)
 
 new Vue({
-  render: h => h(App),
+  router,
+  render: h => h(App)
 }).$mount('#app')

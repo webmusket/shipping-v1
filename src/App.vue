@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <!-- <Login msg="Welcome to Your Vue.js App"/> -->
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/details">About</router-link>
+    </div>
     <div class="min-h-screen bg-gray-100">
             <nav x-data="{ open: false }" class="bg-white shadow-sm">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:pl-8 md:pr-15">
@@ -11,9 +14,9 @@
                                 <img class="hidden lg:block h-8 w-auto" src="/img/logos/workflow-logo-on-white.svg" alt="" />
                             </div>
                             <div class="hidden sm:ml-6 sm:flex">
-                                <a href="#" class="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out">
+                                <router-link to="/" class="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out">
                                     Dashboard
-                                </a>
+                                </router-link>
                                 <a href="#"
                                     class="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
                                     Team
@@ -107,6 +110,7 @@
             <div class="py-10">
 
                 <main>
+                    <!-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8"> -->
                     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                         <!-- Replace with your content -->
 
@@ -161,25 +165,11 @@
 
 
                         <main class="flex-1 mt-2 relative z-0 overflow-y-auto py-5 focus:outline-none" tabindex="0" x-data x-init="$el.focus()">
+                            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                                <router-view/>
+                                
 
-
-
-
-                            <div class="max-w-7xl  mx-auto  sm:px-6 md:px-8 ">
-
-
-
-                                  <router-view></router-view>
-                               
-
-
-
-                                <!-- /End replace -->
                             </div>
-
-
-
-
                         </main>
 
 
@@ -191,30 +181,29 @@
                 </main>
             </div>
         </div>
-
+    
   </div>
 </template>
 
-<script>
-// import Login from './components/Login.vue'
-
-export default {
-  name: 'App',
-  components: {
-    // Login
-  }
-}
-</script>
-
 <style>
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
 </style>
